@@ -1,0 +1,79 @@
+.myslide{
+    height: 30%;
+    width: auto;
+    padding: 20px;
+}
+.col{
+    margin-top: 20px;
+    text-align: center;
+}
+.who{
+    background:#00B0FF;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.note{
+    
+}
+
+.sym{
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.symli{
+    font-size: 15px;
+    text-align: center;
+}
+
+.pandemic{
+    margin-top: 5px;
+}
+.home{
+    align-content: center;
+    text-align: center;
+}
+.safety{
+    background: #00B0FF;
+    border-radius: 5px;
+    align-content: center;
+    text-align: center;
+    padding: 10px;
+
+}
+p{
+    text-align: center;
+    margin: auto;
+}
+h3{
+    text-align: center;
+    margin: auto;
+}
+ion-card{
+    padding: 10px;
+}
+.abt_insight{
+    background: -webkit-gradient(linear, left top, right top, from(rgba(4, 9, 30, 0.8)), to(rgba(4, 9, 30, 0.8))), url("../../../assets/image/donate.jpg");
+  background: -webkit-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../../../assets/image/donate.jpg");
+  background: -o-linear-gradient(left, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../../../assets/image/donate.jpg");
+  background: linear-gradient(to right, rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("../../../assets/image/donate.jpg");
+  padding: 110px 0px;
+  background-size: cover;
+  color: white;
+  align-content: center;
+  text-align: center;
+  display: flex;
+}
+.footer{
+    background: #04091e;
+    display: flex;
+}
+.footerContent{
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    
+}
