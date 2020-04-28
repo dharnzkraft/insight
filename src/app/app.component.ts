@@ -19,18 +19,18 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Comment section',
+      title: 'Your Views',
       url: '/comment',
       icon: 'paper-plane'
     },
     {
-      title: 'About Insight',
-      url: '/about',
+      title: 'Blog',
+      url: '/partners',
       icon: 'heart'
     },
     {
-      title: 'Partners',
-      url: '/partners',
+      title: 'About Insight',
+      url: '/about',
       icon: 'archive'
     },
     {

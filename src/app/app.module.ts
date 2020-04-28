@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import firebaseConfig from './firebase';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FontAwesomeModule
   ],
   providers: [
     StatusBar,

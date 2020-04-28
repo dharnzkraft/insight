@@ -8,63 +8,165 @@
 </ion-header>
 
 <ion-content padding style="display: flex;">
-
-  <ion-row *ngFor="let item of items" style="padding: 20px; margin: auto;">
-    <ion-list>
-      <ion-card>
-          <ion-card-header>
-            
-            <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
-            
-          </ion-card-header>
-          
-          
-          <ion-card-content>
-            {{item.comment}}
-          </ion-card-content>
-        </ion-card>
-    </ion-list>
-     
-  </ion-row>
-  <ion-item >
-    <ion-label floating><ion-icon name="person"></ion-icon></ion-label>
-    <ion-input [(ngModel)]="username" autocomplete="on" clear-input placeholder="Name" required style="border-radius: 5px; background: #ccc;"></ion-input>
-  </ion-item>
-
-  <ion-item >
-    <ion-label floating><ion-icon name="create"></ion-icon></ion-label>
-    <ion-textarea [(ngModel)]="comment" placeholder="Comment" required clear-input style="border-radius: 5px; background: #ccc;"></ion-textarea>
-  </ion-item>
-  <ion-button  clear block (click)="createProfile()"shape="round" fill="outline" expand="full" color="dark">Comment</ion-button>
-
-  &nbsp; &nbsp;
-  <!-- Footer section -->
-  <ion-row class="footer">
-    <ion-col size="12">
-      <ion-card class="footerContent" style="background: #04091e;">
+  <ion-item>
   
-        <ion-card-content>
-          <p style="color: #00B0FF">CONTACT INFORMATION</p>
-          <ion-list style="align-content: center; text-align: center; background: #04091e;">
-            <ion-icon name="pin"></ion-icon>&nbsp;No. 6 Iyana Mortuary, Adatan, Ewekoro road</ion-list>
-          <ion-list style="align-content: center; text-align: center; background: #04091e;">
-            <ion-icon name="mail"></ion-icon>&nbsp;&nbsp;info.insight@gmail.com</ion-list>
-          &nbsp; &nbsp;
-  
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col size="12">
-      <ion-card class="footerContent" style="background: #04091e;">
-        
-        <ion-list style="align-content: center; background: #04091e; text-align: center;">
-          <p style="color:#00B0FF;"> SOCIAL NETWORKS</p>
-          <ion-icon name="logo-twitter" style="font-size: 50px; color: #00acee;"><a href="#"></a></ion-icon>&nbsp;
-          <ion-icon name="logo-facebook" style="font-size: 50px; color:#3b5998;"><a href="#"></a></ion-icon>
+    <ion-segment >
+      <ion-segment-button class="tab1"value="friends">
+        <ion-label>Corona Virus</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class="tab2" value="enemies">
+        <ion-label>Disease Outbreak</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class="tab3" value="Govt">
+        <ion-label>Government Tax</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-item>
+  <ion-grid class="default">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="text-align: center;">Welcome To INSIGHT Live Comment</ion-card-title>
+        <ion-card-subtitle style="text-align: center;">Here Are Rules To Strictly Adhere To</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-item class="ion-activated">
+        <ion-icon name="wifi" slot="start"></ion-icon>
+        <ion-label>Make Your View(s) known without Giving Insultive Remarks</ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <ion-icon name="wine" slot="start"></ion-icon>
+        <ion-label>Obey the second instructions</ion-label>
+      </ion-item>
+    
+      <ion-item class="ion-activated">
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>The admin is mad and can track ur IP to curse you</ion-label>
+      </ion-item>
+    
+      <ion-item>
+        <ion-icon name="walk" slot="start"></ion-icon>
+        <ion-label>Lastly, select segment of your choice from the list of trending issues</ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-grid>
+
+  <!-- section 1 tab -->
+  <ion-grid class="section1" style="display: none;">
+      <ion-row *ngFor="let item of items" style="padding: 20px; margin: auto;">
+        <ion-list>
+          <ion-card>
+              <ion-item class="ion-activated">
+                <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+              </ion-item>
+              <ion-item>
+                {{item.comment}}
+              </ion-item>
+          </ion-card>
         </ion-list>
-      </ion-card>
-    </ion-col>
-    <ion-note style="color: white; font-size: 15px; margin: auto; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">&copy; INSIGHT 2020</ion-note>
-  </ion-row>
+        
+      </ion-row>
+      <ion-item >
+        <ion-label floating><ion-icon name="person"></ion-icon></ion-label>
+        <ion-input [(ngModel)]="username1" autocomplete="on" clear-input placeholder="Name" required style="border-radius: 5px; background: #ccc;"></ion-input>
+      </ion-item>
 
+      <ion-item >
+        <ion-label floating><ion-icon name="create"></ion-icon></ion-label>
+        <ion-textarea [(ngModel)]="comment1" placeholder="Comment" required clear-input style="border-radius: 5px; background: #ccc;"></ion-textarea>
+      </ion-item>
+      <ion-button  clear block (click)="createProfile1()"shape="round" fill="outline" expand="full" color="dark">Comment</ion-button>
+  </ion-grid>
+<!-- section 2tab -->
+  <ion-grid class="section2" style="display: none;">
+    
+    <ion-row *ngFor="let user of users" style="padding: 20px; margin: auto;">
+      <ion-list>
+        <ion-card>
+          <ion-item class="ion-activated">
+            <ion-card-subtitle>{{user.name}}</ion-card-subtitle>
+          </ion-item>
+          <ion-item>
+            {{user.comment}}
+          </ion-item>
+        </ion-card>
+      </ion-list>
+    
+    </ion-row>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input [(ngModel)]="username2" autocomplete="on" clear-input placeholder="Name" required style="border-radius: 5px; background: #ccc;"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="create"></ion-icon>
+      </ion-label>
+      <ion-textarea [(ngModel)]="comment2" placeholder="Comment" required clear-input style="border-radius: 5px; background: #ccc;"></ion-textarea>
+    </ion-item>
+    <ion-button clear block (click)="createProfile2()" shape="round" fill="outline" expand="full" color="dark">Comment</ion-button>
+    </ion-grid>
+<!-- section 3 tab -->
+  <ion-grid class="section3" style="display: none;">
+    <h1>Section 3</h1>
+    <ion-row *ngFor="let toil of toils" style="padding: 20px; margin: auto;">
+      <ion-list>
+        <ion-card>
+          <ion-item class="ion-activated">
+            <ion-card-subtitle>{{toil.name}}</ion-card-subtitle>
+          </ion-item>
+          <ion-item>
+            {{toil.comment}}
+          </ion-item>
+        </ion-card>
+      </ion-list>
+    
+    </ion-row>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input [(ngModel)]="username3" autocomplete="on" clear-input placeholder="Name" required style="border-radius: 5px; background: #ccc;"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="create"></ion-icon>
+      </ion-label>
+      <ion-textarea [(ngModel)]="comment3" placeholder="Comment" required clear-input style="border-radius: 5px; background: #ccc;"></ion-textarea>
+    </ion-item>
+    <ion-button clear block (click)="createProfile3()" shape="round" fill="outline" expand="full" color="dark">Comment</ion-button>
+    </ion-grid>
+      &nbsp; &nbsp;
+      <!-- Footer section -->
+      <ion-row class="footer">
+        <ion-col size="12">
+          <ion-card class="footerContent" style="background: #04091e;">
+      
+            <ion-card-content>
+              <p style="color: #00B0FF">CONTACT INFORMATION</p>
+              <ion-list style="align-content: center; text-align: center; background: #04091e;">
+                <ion-icon name="pin"></ion-icon>&nbsp;No. 6 Iyana Mortuary, Adatan, Ewekoro road</ion-list>
+              <ion-list style="align-content: center; text-align: center; background: #04091e;">
+                <ion-icon name="mail"></ion-icon>&nbsp;&nbsp;info.insight@gmail.com</ion-list>
+              &nbsp; &nbsp;
+      
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12">
+          <ion-card class="footerContent" style="background: #04091e;">
+            
+            <ion-list style="align-content: center; background: #04091e; text-align: center;">
+              <p style="color:#00B0FF;"> SOCIAL NETWORKS</p>
+              <ion-icon name="logo-twitter" style="font-size: 50px; color: #00acee;"><a href="#"></a></ion-icon>&nbsp;
+              <ion-icon name="logo-facebook" style="font-size: 50px; color:#3b5998;"><a href="#"></a></ion-icon>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+        <ion-note style="color: white; font-size: 15px; margin: auto; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">&copy; INSIGHT 2020</ion-note>
+      </ion-row>
+  
 </ion-content>
