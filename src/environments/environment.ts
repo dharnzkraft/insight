@@ -3,12 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://newsapi.org/v2',
+  apiKey: '5a994dabbe204e4392b862b1d584b0d8'
 };
 
 
-
-
+// google news api
+// apiUrl: 'https://gnews.io/api/v3',
+//   apiKey: 'dbc85cbffcde7292900d94ddfeb819dc'
 
 /*
  * For easier debugging in development mode, you can import the following file

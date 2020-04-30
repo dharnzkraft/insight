@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Your Views',
+      title: 'Forum',
       url: '/comment',
       icon: 'paper-plane'
     },
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       icon: 'trash'
     }
   ];
-  public labels = ['v1.0.0'];
+  // public labels = ['v1.0.0'];
 
   constructor(
     private platform: Platform,

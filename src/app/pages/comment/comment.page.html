@@ -25,7 +25,7 @@
   <ion-grid class="default">
     <ion-card>
       <ion-card-header>
-        <ion-card-title style="text-align: center;">Welcome To INSIGHT Live Comment</ion-card-title>
+        <ion-card-title style="text-align: center;">INSIGHT FORUM</ion-card-title>
         <ion-card-subtitle style="text-align: center;">Here Are Rules To Strictly Adhere To</ion-card-subtitle>
       </ion-card-header>
       
@@ -53,6 +53,19 @@
 
   <!-- section 1 tab -->
   <ion-grid class="section1" style="display: none;">
+      <ion-row *ngFor="let load of loads" style="padding: 20px; margin: auto;">
+        <ion-list>
+          <ion-card id="likes">
+            {{load.like}}
+          </ion-card>
+        </ion-list>
+      
+      </ion-row>
+      <!-- <p>{{numberOfLikes}}</p><p>{{numberOfDislikes}}</p> -->
+      <ion-button (click)="likeButtonClick()" value="like"><ion-icon name="thumbs-up"></ion-icon></ion-button>
+      <ion-button color="danger" (click)="dislikeButtonClick()"><ion-icon name="thumbs-down"></ion-icon></ion-button>
+      
+      
       <ion-row *ngFor="let item of items" style="padding: 20px; margin: auto;">
         <ion-list>
           <ion-card>

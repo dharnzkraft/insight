@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'partners',
     loadChildren: () => import('./pages/partners/partners.module').then( m => m.PartnersPageModule)
+  },
+  {
+    path: 'folder',
+    loadChildren: () => import('./pages/folder/folder.module').then(m => m.FolderPageModule)
   }
 ];
 

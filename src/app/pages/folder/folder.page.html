@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" (click)="goToPartnerPage()">
+    <ion-button>
+      <ion-icon name="arrow-back" routerLink='partner'>Blog Page</ion-icon>
+    </ion-button>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{article.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <!-- <ion-img [src]='article.urlToImage'></ion-img> -->
+    
+  
+    <ion-card-content>
+      <p>{{article.description}}</p>
+      <ion-button color="primary" href="{{article.url}}">read more</ion-button><br/>
+       
+    </ion-card-content>
+  </ion-card>
+</ion-content>

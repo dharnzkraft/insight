@@ -29,11 +29,14 @@ export class CommentPage implements OnInit {
   toils;  // third page data
   users; // second page data
   items; // first page data
+  loads; // like button
   numberOfLikes = 0;
+  numberOfDislikes = 0;
   dd: any;
   mm: any;
   today: any;
   date: any;
+
   constructor(
     private afDatabase: AngularFireDatabase,
     public platform: Platform
@@ -42,6 +45,7 @@ export class CommentPage implements OnInit {
       this.getData();
       this.getData2();
       this.getData3();
+      this.getLikes();
 
       this.platform.ready().then(() => {
 
@@ -74,10 +78,11 @@ export class CommentPage implements OnInit {
   }
 
   likeButtonClick() {
-    this.numberOfLikes++;
+    this.afDatabase.list(`/likes`).push({like: this.numberOfLikes});
+    // this.numberOfLikes++;
   }
   dislikeButtonClick() {
-    this.numberOfLikes--;
+    this.numberOfDislikes--;
   }
   createProfile1() {
       this.afDatabase.list(`/comments`).push({name: this.username1, comment: this.comment1});
@@ -90,6 +95,8 @@ export class CommentPage implements OnInit {
   createProfile3() {
     this.afDatabase.list(`/sec3comments`).push({ name: this.username3, comment: this.comment3 });
   }
+
+
   getData() {
     this.afDatabase.list(`/comments`).valueChanges().subscribe(
       data => {
@@ -110,6 +117,15 @@ export class CommentPage implements OnInit {
     this.afDatabase.list(`/sec3comments`).valueChanges().subscribe(
       data => {
         this.toils = data;
+      }
+    );
+  }
+
+  getLikes() {
+    this.afDatabase.list(`/likes`).valueChanges().subscribe(
+      data => {
+        this.loads = data.lenght;
+        console.log(Object.keys(data).length);
       }
     );
   }
